@@ -16,6 +16,22 @@ document.getElementById('addTaskBtn').addEventListener('click', function (){
 
     }
 })
+taskInput.addEventListener('keydown', (event) => {
+    let taskInput = document.getElementById('taskInput').value
+
+    if (event.key === 'Enter') {
+        if (taskInput) {
+            //add tasks to task array
+            tasks.push(taskInput)
+            //clear input field after adding task
+            document.getElementById('taskInput').value = ''
+            //call the function to update the task list display
+            displayTasks()
+    
+        }
+
+    }
+})
 //function to display tasks in the list
 function displayTasks() {
     //select an unordered list 
