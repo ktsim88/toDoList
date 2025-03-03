@@ -1,5 +1,9 @@
 body {
     background-color: rgb(196, 243, 255);
+	font-family: Georgia, 'Times New Roman', Times, serif;
+}
+#taskCounter {
+	font-weight: 700px;
 }
 /* button from https://www.bestcssbuttongenerator.com/#/22 */
 .btn {
