@@ -1,5 +1,6 @@
 //initialize empty array called task
 let tasks = []
+let taskCount = 0
 
 // add an ON CLICK event listener to my add task button that calls a function
 document.getElementById('addTaskBtn').addEventListener('click', function (){
@@ -13,6 +14,7 @@ document.getElementById('addTaskBtn').addEventListener('click', function (){
         document.getElementById('taskInput').value = ''
         //call the function to update the task list display
         displayTasks()
+        
 
     }
 })
@@ -27,6 +29,7 @@ taskInput.addEventListener('keydown', (event) => {
             document.getElementById('taskInput').value = ''
             //call the function to update the task list display
             displayTasks()
+            
     
         }
 
@@ -55,6 +58,15 @@ function displayTasks() {
     }
 
     )
+    //gets number of tasks
+    taskCount = tasks.length
+    //updates task count display
+    updateTaskCountDisplay(taskCount)
+}
+//function that updates the task counter
+function updateTaskCountDisplay(count) {
+    let taskCounter = document.getElementById('taskCounter')
+    taskCounter.innerText = `Tasks: ${count}`
 }
 //remove task when the checkmark button is clikced
 function removeTask(index) {
